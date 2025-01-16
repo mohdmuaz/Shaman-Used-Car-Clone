@@ -20,7 +20,6 @@ const Navbar = () => {
         isScrolled ? "bg-white text-black shadow-md" : "bg-black text-white"
       }`}
     >
-      {/* Logo */}
       <div className="mr-12 ml-5">
         <a href="/">
           <img
@@ -33,7 +32,6 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Hamburger Menu Button for Mobile View */}
       <div className="ml-auto flex lg:hidden">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -45,7 +43,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Navigation Links for Desktop View */}
       <div
         className={`hidden lg:flex space-x-6 font-semibold transition-all duration-500`}
       >
@@ -76,7 +73,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Dropdown Menu for Mobile View */}
       {isMenuOpen && (
         <div
           className={`absolute top-full right-0 w-full bg-black text-white lg:hidden`}

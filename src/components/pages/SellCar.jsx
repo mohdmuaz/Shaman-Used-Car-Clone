@@ -27,42 +27,36 @@ const DealershipPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Form submitted', formData);
   };
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center">
 
-      {/* Top Section with Dealership Grid */}
       <div className="w-full h-full bg-white p-6 sm:p-12">
         <div className="h-auto flex flex-col justify-between">
-          {/* Heading */}
+
           <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6 sm:mb-8 mt-10 sm:mt-20">
           Want to sell your car?
           </h1>
 
-          {/* Grid Layout for the 4 divs */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-            {/* First Div */}
+            
             <div className="flex flex-col items-center p-4">
               <img src={Dealership1} alt="Logo 1" className="mb-2 h-28 w-28 object-contain" />
               <p className="text-center text-xl font-semibold">Free Evaluation</p>
             </div>
 
-            {/* Second Div */}
             <div className="flex flex-col items-center p-4">
               <img src={Dealership2} alt="Logo 2" className="mb-2 h-28 w-28 object-contain" />
               <p className="text-center text-xl font-semibold">Best Price</p>
             </div>
 
-            {/* Third Div */}
             <div className="flex flex-col items-center p-4">
               <img src={Dealership3} alt="Logo 3" className="mb-2 h-28 w-28 object-contain" />
               <p className="text-center text-xl font-semibold">Quick Payment</p>
             </div>
 
-            {/* Fourth Div */}
             <div className="flex flex-col items-center p-4">
               <img src={Dealership4} alt="Logo 4" className="mb-2 h-28 w-28 object-contain" />
               <p className="text-center text-base font-bold">Hassle Free Transfer</p>
@@ -73,12 +67,10 @@ const DealershipPage = () => {
 
       <h2 className="text-2xl font-semibold text-gray-700 mb-6 mt-5">Answer a few questions and connect with our expert advisor for free consultation.</h2>
 
-      {/* Form Section */}
       <div className="w-full max-w-5xl bg-blue-50 p-6 sm:p-10 shadow-lg rounded-3xl mt-10 mb-10">
         
         <form onSubmit={handleSubmit} className="space-y-6 m-10">
 
-          {/* Name and Email in the Same Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
@@ -92,6 +84,7 @@ const DealershipPage = () => {
                 required
               />
             </div>
+
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
               <input
@@ -107,7 +100,6 @@ const DealershipPage = () => {
             </div>
           </div>
 
-          {/* Mobile and Brand in the Same Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             <div>
               <label htmlFor="mobile" className="block text-sm font-medium text-gray-700">Your Mobile</label>
@@ -136,7 +128,6 @@ const DealershipPage = () => {
             </div>
           </div>
 
-          {/* Model and Registration Number in the Same Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             <div className="mt-4">
               <label htmlFor="model" className="block text-sm font-medium text-gray-700">Car Model</label>
@@ -164,7 +155,6 @@ const DealershipPage = () => {
             </div>
           </div>
 
-          {/* Year and Kilometers in the Same Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             <div className="mt-4">
               <label htmlFor="year" className="block text-sm font-medium text-gray-700">Year</label>
@@ -192,7 +182,6 @@ const DealershipPage = () => {
             </div>
           </div>
 
-          {/* Consent Checkbox */}
           <div className="flex items-center">
             <input
               type="checkbox"
@@ -208,7 +197,6 @@ const DealershipPage = () => {
             </label>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className=" py-3 mt-6 bg-red-600 text-white text-lg rounded-md hover:bg-red-700 transition p-5 font-semibold"

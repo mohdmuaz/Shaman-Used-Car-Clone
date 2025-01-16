@@ -9,11 +9,9 @@ import { Link } from 'react-router-dom';
 const App = () => {
   return (
     <div className="bg-white min-h-screen p-8">
-      {/* Heading */}
       <h1 className="text-4xl font-bold text-center mb-8 sm:text-3xl">Deals of the Day</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-        {/* Left Div (Full Height of the Left Side) */}
         <div className="col-span-1 h-[calc(100vh-200px)]">
           <Link to="/BuyUsedCar">
             <div className="relative h-full border border-gray-300 bg-white overflow-hidden group rounded-lg hover:border-red-600 transition-colors duration-300">
@@ -39,7 +37,6 @@ const App = () => {
           </Link>
         </div>
 
-        {/* Right Side (4 Divs in Grid) */}
         <div className="grid grid-rows-2 grid-cols-2 gap-4 h-[calc(100vh-200px)]">
           {[Deal2, Deal3, Deal4, Deal5].map((dealImage, index) => (
             <Link to="/BuyUsedCar" key={index}>
@@ -68,7 +65,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* View More Button */}
       <div className="text-center mt-8">
         <Link to="/BuyUsedCar">
           <button className="bg-red-500 text-white font-bold py-2 px-6 rounded hover:bg-red-600 transition-colors duration-300 sm:py-2 sm:px-4 sm:text-sm">

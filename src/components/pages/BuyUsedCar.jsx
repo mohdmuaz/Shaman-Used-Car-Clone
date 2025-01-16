@@ -5,7 +5,6 @@ const BuyUsedCar = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  // Generate dummy data for 20 divs
   const carData = Array.from({ length: 20 }, (_, index) => ({
     id: index + 1,
     image:{Deal1},
@@ -38,18 +37,17 @@ const BuyUsedCar = () => {
           key={car.id}
           className="w-full flex items-center p-4 mb-4 rounded-lg shadow-md"
         >
-          {/* Image */}
           <img
             src={Deal1}
             alt="Car"
             className="w-[180px] h-[150px] rounded-lg"
           />
-          {/* Text Content */}
+
           <div className="flex-grow px-4">
             <h2 className="text-xl font-bold mb-2">{car.heading}</h2>
             <p className="text-gray-600">{car.details}</p>
           </div>
-          {/* Price */}
+
           <div className="text-right">
             <p className="text-2xl font-bold text-black">{car.price}</p>
           </div>

@@ -1,12 +1,12 @@
-import FooterImg from '../assets/footerimg.jpg'; // Ensure this path is correct
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Importing icons from React Icons
+import FooterImg from '../assets/footerimg.jpg';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <>
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 p-8 md:p-12 px-20">
-          {/* Section 1: Image */}
+          
           <div className="flex justify-center md:justify-start mb-8 md:mb-0">
             <img
               src={FooterImg}
@@ -15,7 +15,6 @@ const Footer = () => {
             />
           </div>
 
-          {/* Section 2: Menu */}
           <div className="mb-8 md:mb-0">
             <h3 className="text-lg font-bold mb-4">Menu</h3>
             <ul className="space-y-2">
@@ -47,7 +46,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Section 3: Contact */}
           <div className="mt-4 md:mt-0">
             <h3 className="text-lg font-bold mb-4">Contact</h3>
             <ul className="space-y-3">
@@ -69,7 +67,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Section 4: Google Map */}
+
           <div className="col-span-1 md:col-span-1 mt-6 md:mt-0">
             <iframe
               className="w-full h-80"
@@ -84,12 +82,10 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="bg-gray-900 text-white py-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center border-t border-white pt-4">
-          {/* Left Section: Copyright Text */}
           <p className="text-sm mb-4 md:mb-0">
             Copyright Shaman Used Cars © 2023. All rights reserved.
           </p>
 
-          {/* Right Section: Social Media Icons */}
           <div className="flex space-x-6">
             <a
               href="https://www.facebook.com"

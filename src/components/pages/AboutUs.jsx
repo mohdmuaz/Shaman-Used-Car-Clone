@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <div>
       <div className="flex flex-col lg:flex-row items-center justify-between p-6 lg:p-12 mt-16">
-        {/* Left Section */}
+
         <div className="lg:w-1/2 w-full lg:pr-8 mt-14">
           <h1 className="text-4xl font-semibold mb-6 text-gray-800">About Us</h1>
           <p className="text-black text-base font-medium leading-relaxed">
@@ -16,7 +16,6 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Right Section */}
         <div className="lg:w-1/2 w-full mt-6 lg:mt-0">
           <img 
             src={AboutImage}

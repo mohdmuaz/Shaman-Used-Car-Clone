@@ -31,14 +31,12 @@ const BrandsPage = () => {
 
   return (
     <div className="h-[40vh] w-full flex flex-col justify-between items-center bg-gray-50 mb-12 mt-5"> 
-      {/* Heading Section */}
       <header className="text-center py-4">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mt-">
           Explore a wide range of Brands
         </h1>
       </header>
 
-      {/* Sliding Logo Section */}
       <div className="overflow-hidden relative ml-10 mr-10">
         <div className="flex w-[200%] h-[200%] animate-scroll">
           {brandImages.map((brand, index) => (

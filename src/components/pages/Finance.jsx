@@ -1,4 +1,3 @@
-// LoanCalculator.jsx
 import { useState } from 'react';
 
 const LoanCalculator = () => {
@@ -32,7 +31,7 @@ const LoanCalculator = () => {
 
   return (
     <div className="bg-white min-h-screen flex flex-col items-center p-4 mt-24">
-      {/* Heading Section */}
+
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-black mt-14">Loan Calculator</h1>
         <p className="text-black mt-10 mb-10 font-semibold">
@@ -40,7 +39,7 @@ const LoanCalculator = () => {
         </p>
       </div>
 
-      {/* Calculator Inputs */}
+
       <div className="bg-white p-6 w-full max-w-xl">
         <div className="space-y-4 text-lg font-semibold">
           <div className="grid grid-cols-2 gap-10">
@@ -89,7 +88,7 @@ const LoanCalculator = () => {
         </div>
       </div>
 
-      {/* Output Section */}
+
       <div className="bg-white border border-red-600 rounded-lg p-6 max-w-2xl mt-14 text-lg">
         <div className="grid grid-cols-3 gap-14 ml-5 mr-5 mb-5 text-gray-700">
           <div className="text-center">
@@ -109,7 +108,7 @@ const LoanCalculator = () => {
         </div>
       </div>
 
-      {/* Contact Form */}
+
       <div className="bg-white p-6 w-full mt-20 ml-24 mr-24">
         <h2 className="text-3xl font-bold text-center mb-12">Contact Form</h2>
         <form className="space-y-10 ml-20 mr-20">
