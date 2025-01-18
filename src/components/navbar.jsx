@@ -1,9 +1,11 @@
 import LogoImage from "../assets/logo.png";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full flex items-center p-2 transition-all duration-500 z-50 ${
@@ -21,7 +30,7 @@ const Navbar = () => {
       }`}
     >
       <div className="mr-12 ml-5">
-        <a href="/">
+        <Link to="/">
           <img
             src={LogoImage}
             alt="Logo"
@@ -29,7 +38,7 @@ const Navbar = () => {
               isScrolled ? "h-[65px] w-[90px]" : "h-[70px] w-[120px]"
             }`}
           />
-        </a>
+        </Link>
       </div>
 
       <div className="ml-auto flex lg:hidden">
@@ -47,29 +56,49 @@ const Navbar = () => {
         className={`hidden lg:flex space-x-6 font-semibold transition-all duration-500`}
       >
         <div className="p-2 cursor-pointer">
-          <a href="/BuyUsedCar" className="hover:text-red-500">
+          <Link to="/BuyUsedCar" className="hover:text-red-500">
             Buy Used Cars
-          </a>
+          </Link>
         </div>
         <div className="p-2 cursor-pointer">
-          <a href="/SellCar" className="hover:text-red-500">
+          <Link to="/SellCar" className="hover:text-red-500">
             Sell Cars
-          </a>
+          </Link>
         </div>
         <div className="p-2 cursor-pointer">
-          <a href="/Finance" className="hover:text-red-500">
+          <Link to="/Finance" className="hover:text-red-500">
             Finance
-          </a>
+          </Link>
+        </div>
+        <div
+          className="p-2 cursor-pointer relative"
+          onMouseEnter={() => setIsDropdownOpen(true)}
+          onMouseLeave={() => setIsDropdownOpen(false)}
+        >
+          <Link to="/AboutUs" className="hover:text-red-500">
+            About Us ˇ
+          </Link>
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 bg-white text-black shadow-md rounded-md w-48">
+              <Link
+                to="/AboutUs#DasWeltAuto"
+                className="block px-6 py-1.5 mt-3 text-red-600 text-lg font-normal text-left hover:text-red-400"
+              >
+                Das WeltAuto
+              </Link>
+              <Link
+                to="/AboutUs#AutoTerrace"
+                className="block px-6 py-1.5 mb-4 text-red-600 text-lg font-normal text-left hover:text-red-400"
+              >
+                Auto Terrace
+              </Link>
+            </div>
+          )}
         </div>
         <div className="p-2 cursor-pointer">
-          <a href="/AboutUs" className="hover:text-red-500">
-            About Us
-          </a>
-        </div>
-        <div className="p-2 cursor-pointer">
-          <a href="/Contact" className="hover:text-red-500">
+          <Link to="/Contact" className="hover:text-red-500">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -78,21 +107,36 @@ const Navbar = () => {
           className={`absolute top-full right-0 w-full bg-black text-white lg:hidden`}
         >
           <div className="flex flex-col space-y-4 p-4 font-semibold">
-            <a href="/BuyUsedCar" className="hover:text-red-500">
+            <Link to="/BuyUsedCar" className="hover:text-red-500">
               Buy Used Cars
-            </a>
-            <a href="/SellCar" className="hover:text-red-500">
+            </Link>
+            <Link to="/SellCar" className="hover:text-red-500">
               Sell Cars
-            </a>
-            <a href="/Finance" className="hover:text-red-500">
+            </Link>
+            <Link to="/Finance" className="hover:text-red-500">
               Finance
-            </a>
-            <a href="/AboutUs" className="hover:text-red-500">
-              About Us
-            </a>
-            <a href="/Contact" className="hover:text-red-500">
+            </Link>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleScrollToSection("DasWeltAuto");
+              }}
+              className="hover:text-red-500 text-left"
+            >
+              Das WeltAuto
+            </button>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleScrollToSection("AutoTerrace");
+              }}
+              className="hover:text-red-500 text-left"
+            >
+              Auto Terrace
+            </button>
+            <Link to="/Contact" className="hover:text-red-500">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       )}

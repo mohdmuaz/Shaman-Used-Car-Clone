@@ -48,7 +48,7 @@ const Dropdown = ({ title, options }) => {
   );
 };
 
-// Prop validation for title and options
+// Prop validation for title, options
 Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,

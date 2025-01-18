@@ -1,4 +1,13 @@
 import { useState } from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+import Finance1 from '../../assets/finance1.png';
+import Finance2 from '../../assets/finance2.png';
+import Finance3 from '../../assets/finance3.png';
+import Finance4 from '../../assets/finance4.png';
+import Finance5 from '../../assets/finance5.png';
 
 const LoanCalculator = () => {
   const [price, setPrice] = useState(0);
@@ -29,16 +38,24 @@ const LoanCalculator = () => {
 
   const { emi, totalPayment, totalInterest } = calculateEMI();
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <div className="bg-white min-h-screen flex flex-col items-center p-4 mt-24">
-
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-black mt-14">Loan Calculator</h1>
         <p className="text-black mt-10 mb-10 font-semibold">
           Let us help you calculate car loan EMIs so you can plan your budget accordingly.
         </p>
       </div>
-
 
       <div className="bg-white p-6 w-full max-w-xl">
         <div className="space-y-4 text-lg font-semibold">
@@ -88,7 +105,6 @@ const LoanCalculator = () => {
         </div>
       </div>
 
-
       <div className="bg-white border border-red-600 rounded-lg p-6 max-w-2xl mt-14 text-lg">
         <div className="grid grid-cols-3 gap-14 ml-5 mr-5 mb-5 text-gray-700">
           <div className="text-center">
@@ -107,7 +123,6 @@ const LoanCalculator = () => {
           </div>
         </div>
       </div>
-
 
       <div className="bg-white p-6 w-full mt-20 ml-24 mr-24">
         <h2 className="text-3xl font-bold text-center mb-12">Contact Form</h2>
@@ -155,6 +170,20 @@ const LoanCalculator = () => {
             </button>
           </div>
         </form>
+      </div>
+
+      {/* Sliding Section */}
+      <div className="bg-white w-full mt-20 mb-20">
+        <h2 className="text-6xl font-bold text-center mb-10">Our Finance Partners</h2>
+        <div className="w-full max-w-5xl mx-auto ">
+          <Slider {...sliderSettings}>
+            <img src={Finance1} alt="Partner 1" className="w-full p-10" />
+            <img src={Finance2} alt="Partner 2" className="w-full p-10" />
+            <img src={Finance3} alt="Partner 3" className="w-full p-10" />
+            <img src={Finance4} alt="Partner 4" className="w-full p-10" />
+            <img src={Finance5} alt="Partner 5" className="w-full p-10" />
+          </Slider>
+        </div>
       </div>
     </div>
   );

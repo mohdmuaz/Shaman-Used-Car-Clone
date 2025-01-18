@@ -1,18 +1,13 @@
-import FooterImg from '../assets/footerimg.jpg';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import FooterImg from "../assets/footerimg.jpg";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <>
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 p-8 md:p-12 px-20">
-          
           <div className="flex justify-center md:justify-start mb-8 md:mb-0">
-            <img
-              src={FooterImg}
-              alt="Footer Logo"
-              className="h-22 w-22"
-            />
+            <img src={FooterImg} alt="Footer Logo" className="h-22 w-22" />
           </div>
 
           <div className="mb-8 md:mb-0">
@@ -67,12 +62,12 @@ const Footer = () => {
             </ul>
           </div>
 
-
           <div className="col-span-1 md:col-span-1 mt-6 md:mt-0">
             <iframe
               className="w-full h-80"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.879292270969!2d72.86567561472556!3d19.0821974870888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c84f0c207c01%3A0xb32ff9e4a12268f5!2sMetro%20Estate%2C%20178%2C%20CST%20Road%2C%20Kolivery%20Village%2C%20MMRDA%20Area%2C%20Kalina%2C%20Santacruz%20East%2C%20Mumbai%2C%20Maharashtra%20400098!5e0!3m2!1sen!2sin!4v1674512401715!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7541.8483288691715!2d72.86521701472542!3d19.073255499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c84b772b50c5%3A0x26c94352a7d4bb3a!2sShaman%20Used%20Cars!5e0!3m2!1sen!2sin!4v1674512401715!5m2!1sen!2sin&z=25"
               title="Google Map"
+              allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
