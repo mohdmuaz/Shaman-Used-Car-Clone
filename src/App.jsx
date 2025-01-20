@@ -13,6 +13,7 @@ import Finance from './components/pages/Finance';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/Contact';
 import BuyUsedCar from './components/pages/BuyUsedCar';
+import CarDetails from './components/pages/CarDetails';
 
 function Home() {
   return (
@@ -42,7 +43,7 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Contact" element={<ContactUs />} />
         <Route path="/BuyUsedCar" element={<BuyUsedCar />} />
-        
+        <Route path="/car-details/:id" element={<CarDetails />} />
         
         </Routes>
 

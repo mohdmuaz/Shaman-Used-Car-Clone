@@ -1,23 +1,38 @@
-import { useState } from "react";
-import PropTypes from "prop-types"; 
+import { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
-const Dropdown = ({ title, options }) => {
+const Dropdown = ({ title, options, isDisabled = false, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    if (!isDisabled) setIsOpen(!isOpen);
   };
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
+    if (onSelect) onSelect(option); // Notify parent when an option is selected
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <div
-        className="flex justify-between items-center bg-gray-100 p-3 rounded-lg cursor-pointer"
+        className={`flex justify-between items-center p-3 rounded-lg cursor-pointer ${isDisabled ? "bg-gray-200 cursor-not-allowed" : "bg-gray-100"}`}
         onClick={toggleDropdown}
       >
         <span>{selectedOption || title}</span>
@@ -31,7 +46,7 @@ const Dropdown = ({ title, options }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
-      {isOpen && (
+      {isOpen && !isDisabled && (
         <ul className="absolute w-full bg-white border border-gray-200 mt-2 rounded-lg shadow-lg z-10 max-h-48 overflow-y-auto">
           {options.map((option, index) => (
             <li
@@ -52,6 +67,8 @@ const Dropdown = ({ title, options }) => {
 Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isDisabled: PropTypes.bool,
+  onSelect: PropTypes.func,
 };
 
 export default Dropdown;

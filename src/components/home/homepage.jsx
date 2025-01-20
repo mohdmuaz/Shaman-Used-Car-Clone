@@ -1,7 +1,14 @@
+import { useState } from "react";
 import Dropdown from "../home/dropdown";
 import BGimage from '../../assets/bgimage.jpg';
 
 const App = () => {
+  const [selectedMake, setSelectedMake] = useState("");
+
+  const handleMakeSelect = (make) => {
+    setSelectedMake(make);
+  };
+
   return (
     <div 
       className="h-screen w-screen bg-cover bg-center flex items-center justify-center pt-16"
@@ -14,12 +21,14 @@ const App = () => {
             <Dropdown
               title="All Makes"
               options={["Honda", "Hyundai", "Mahindra", "Ford", "Volkswagen", "Renault", "Kia", "Skoda", "Maruti Suzuki", "Tata Motors", "Mg Motor", "Nissan", "Audi", "BMW"]}
+              onSelect={handleMakeSelect}
             />
           </div>
           <div className="w-full sm:w-72 border border-gray-200 rounded-md mb-4 sm:mb-0">
             <Dropdown
               title="All Models"
               options={["Creta", "Swift", "Punch", "Thar", "Curvv", "Magnite", "Scorpio", "Alto", "Safari", "Dzire", "Nexon", "Bolero"]}
+              isDisabled={!selectedMake}
             />
           </div>
           <div className="w-full sm:w-72 border border-gray-200 rounded-md mb-4 sm:mb-0">
